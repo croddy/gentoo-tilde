@@ -23,6 +23,15 @@ define tilde::user (
     target => $userdir,
   }
 
+  file { "${userdir}/index.html":
+    ensure  => file,
+    owner   => $user,
+    group   => $user,
+    mode    => '0644',
+    content => template("${module_name}/index.html.erb"),
+    replace => false,
+  }
+
   file { "/home/${user}/.ssh":
     ensure => directory,
     owner  => $user,
