@@ -34,7 +34,7 @@ define tilde::user (
 
   concat::fragment { "${user} main index entry":
     target  => $tilde::tilde_index,
-    content => "<li><a href=\"/~${user}/\">~${user}</a></li>",
+    content => "<li><a href=\"/~${user}/\">~${user}</a></li>\n",
     order   => 1000,
   }
 
