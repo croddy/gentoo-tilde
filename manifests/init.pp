@@ -45,7 +45,7 @@ class tilde (
   include ::thttpd
 
   # users and groups
-  group { $site_group,
+  group { $site_group:
     ensure => present,
     gid    => 9001,
   }
