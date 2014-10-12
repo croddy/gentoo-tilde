@@ -3,7 +3,7 @@ define tilde::user (
   $ssh_key_type,
 ) {
   $user = $title
-  $userdir = "${tilde::document_root}/~${user}"
+  $userdir = "${thttpd::document_root}/~${user}"
 
   user { $user:
     ensure     => present,

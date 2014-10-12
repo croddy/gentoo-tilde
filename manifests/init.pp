@@ -35,7 +35,11 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class tilde ($sitename, $users, $users_defaults) {
+class tilde (
+  $sitename,
+  $users,
+  $users_defaults
+) {
 
   include ::thttpd
 
