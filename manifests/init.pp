@@ -45,6 +45,7 @@ class tilde (
 
   group { $sitename:
     ensure => present,
+    gid    => 9001,
   }
 
   create_resources(tilde::user, $users, $users_defaults)
