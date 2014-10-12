@@ -12,6 +12,9 @@
                 ||     ||
 </pre>
 <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
-<p>Host <%= @fqdn %>, operating system <%= @operatingsystem %> release <%= @operatingsystemrelease %></p>
+<p>Host <%= @fqdn %>, running <%= @operatingsystem %> <%= @operatingsystemrelease %><br/>
+Uptime at last index refresh: <%= @uptime %><br/>
+Total users: <%= scope['::tilde::users'].size %>
+</p>
 <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <ul>
