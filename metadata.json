@@ -8,7 +8,8 @@
   "project_page": "https://github.com/cmroddy/gentoo-tilde/",
   "issues_url": "https://github.com/cmroddy/gentoo-tilde/issues",
   "dependencies": [
-    {"name":"croddy-thttpd","version_requirement":">= 0.0.0"}
+    {"name":"croddy-thttpd","version_requirement":">= 0.0.0"},
+    {"name":"puppetlabs-concat","version_requirement":">= 1.0.0"}
   ]
 }
 

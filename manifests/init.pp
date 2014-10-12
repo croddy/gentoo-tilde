@@ -36,18 +36,41 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class tilde (
-  $sitename,
+  $site_name,
+  $site_group,
   $users,
   $users_defaults
 ) {
 
   include ::thttpd
 
-  group { $sitename:
+  # users and groups
+  group { $site_group,
     ensure => present,
     gid    => 9001,
   }
 
   create_resources(tilde::user, $users, $users_defaults)
+
+  # main index assembly
+  $tilde_index = "${thttpd::document_root}/index.html"
+
+  concat { $tilde_index:
+    ensure => present,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+  }
+
+  concat::fragment { 'tilde index header':
+    target  => $tilde_index,
+    content => template("${module_name}/index_header.html.erb"),
+    order   => '0001',
+  }
+  concat::fragment { 'tilde index footer':
+    target  => $tilde_index,
+    content => template("${module_name}/index_footer.html.erb"),
+    order   => '9001',
+  }
 
 }
