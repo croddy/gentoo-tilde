@@ -32,6 +32,12 @@ define tilde::user (
     replace => false,
   }
 
+  concat::fragment { "${user} main index entry":
+    target  => $tilde::tilde_index,
+    content => "<li><a href=\"/~${user}/\">~${user}</a></li>",
+    order   => 1000,
+  }
+
   file { "/home/${user}/.ssh":
     ensure => directory,
     owner  => $user,
