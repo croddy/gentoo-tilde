@@ -23,9 +23,10 @@ define tilde::user (
   }
 
   ssh_authorized_key { "${user} signup key":
-    ensure => present,
-    key    => $ssh_key,
-    type   => $ssh_key_type,
-    user   => $user,
+    ensure  => present,
+    key     => $ssh_key,
+    type    => $ssh_key_type,
+    user    => $user,
+    require => User[$user],
   }
 }
