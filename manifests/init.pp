@@ -35,7 +35,9 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class tilde {
+class tilde ($users, $users_defaults) {
 
+  include ::thttpd
+  create_resources(tilde::user, $users, $users_defaults)
 
 }
