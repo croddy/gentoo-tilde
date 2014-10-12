@@ -35,9 +35,14 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class tilde ($users, $users_defaults) {
+class tilde ($sitename, $users, $users_defaults) {
 
   include ::thttpd
+
+  group { $sitename:
+    ensure => present,
+  }
+
   create_resources(tilde::user, $users, $users_defaults)
 
 }
