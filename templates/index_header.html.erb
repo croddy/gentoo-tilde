@@ -6,12 +6,14 @@
   <body>
     <style type="text/css">
       body { background-color: black; color: rgb(255,225,148); padding: 4em; font-family: Ubuntu Mono, DejaVu Sans Mono, Droid Sans Mono, Liberation Mono, Monospace; }
-      a { color: rgb(0,255,0); }
-      a:visited { color: rgb(0,192,0) }
+      a { color: rgb(64,255,64); }
+      a:visited { color: rgb(32,192,32) }
       a:hover { color: white; }
+      p.hr { color: rgb(64,255,64) }
       * { font-size: 12pt; }
     </style>
 
+<p class="hr">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
     <pre>< welcome to <%= @site_name %>! >
         \   ^__^
          \  (**)\_______
@@ -19,10 +21,10 @@
              U  ||----w |
                 ||     ||
 </pre>
-<p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+<p class="hr">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>Host <%= @fqdn %>, running <%= @operatingsystem %> <%= @operatingsystemrelease %><br/>
 Uptime: <%= @uptime %><br/>
 </p>
-<p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+<p class="hr">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 Total users: <%= scope['::tilde::users'].size %>
 <ul>

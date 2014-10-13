@@ -46,6 +46,8 @@ class tilde (
 
   include ::thttpd
 
+  include ::tilde::quota
+
   package { $local_packages:
     ensure => installed,
   }

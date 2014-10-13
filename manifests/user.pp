@@ -11,6 +11,13 @@ define tilde::user (
     ensure     => present,
     groups     => [$tilde::site_group, 'games'],
     managehome => true,
+    notify     => Exec["set quota for ${user}"],
+  }
+
+  # disk quota
+  exec { "set quota for ${user}":
+    command     => "/usr/bin/setquota -u ${user} 10000 12000 0 0 -a",
+    refreshonly => true,
   }
 
   # www content
