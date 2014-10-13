@@ -16,7 +16,7 @@ class tilde::mail {
     ensure => directory,
     owner  => 'mail',
     group  => 'root',
-    mode   => '1755',
+    mode   => '1777',
   }
 
   exec { 'postfix upgrade config':
