@@ -46,6 +46,10 @@ class tilde (
 
   include ::thttpd
 
+  package { $local_packages:
+    ensure => installed,
+  }
+
   # users and groups
   group { $site_group:
     ensure => present,
