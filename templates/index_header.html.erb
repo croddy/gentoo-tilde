@@ -11,6 +11,7 @@
       a:visited { color: rgb(192,160,96); }
       a:hover { color: white; }
       p.hr { color: rgb(128,255,128); }
+      p.hr { width: 60em; }
       * { font-size: 12pt; }
     </style>
 
@@ -35,6 +36,6 @@ ssh public key. there is no cost for membership.</p>
 <p class="hr">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>Host <%= @fqdn %>, running <%= @operatingsystem %> <%= @operatingsystemrelease %><br/>
 Uptime: <%= @uptime %><br/>
-</p>
-Total users: <%= scope['::tilde::users'].size %>
+Total users: <%= scope['::tilde::users'].size %></p>
+<p class="active">Recently active: <%= @active_users %></p>
 <ul>
