@@ -52,4 +52,20 @@ define tilde::user (
     user    => $user,
     require => User[$user],
   }
+
+  file { "/home/${user}/.irssi":
+    ensure => directory,
+    owner  => $user,
+    group  => $user,
+    mode   => '0700',
+  }
+
+  file { "/home/${user}/.irssi/config":
+    ensure  => file,
+    owner   => $user,
+    group   => $user,
+    mode    => '0600',
+    content => template("${module_name}/irssi_config.erb"),
+  }
+
 }
