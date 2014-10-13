@@ -28,12 +28,12 @@ sanity to this configuration, we use <a href="http://puppetlabs.com/">puppet</a>
 
 <p>currently tilde.farm offers secure shell, local irc, and web hosting services.<br/>
 registration of new accounts is currently <b>open</b>. if you would like to join,<br/>
-please email <a href="mailto:cmr@mdc2.org">cmr@mdc2.org</a> and be sure to include your preferred username and an<br/>
+please email <b><a href="mailto:cmr@mdc2.org">cmr@mdc2.org</a></b> and be sure to include your preferred username and an<br/>
 ssh public key. there is no cost for membership.</p>
 
+<p class="hr">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>Host <%= @fqdn %>, running <%= @operatingsystem %> <%= @operatingsystemrelease %><br/>
 Uptime: <%= @uptime %><br/>
 </p>
-<p class="hr">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 Total users: <%= scope['::tilde::users'].size %>
 <ul>
