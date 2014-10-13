@@ -81,4 +81,14 @@ define tilde::user (
     replace => false,
   }
 
+  # alpine config
+  file { "/home/${user}/.pinerc":
+    ensure  => file,
+    owner   => $user,
+    group   => $user,
+    mode    => '0600',
+    content => template("${module_name}/pinerc.erb"),
+    replace => false,
+  }
+
 }
