@@ -5,11 +5,11 @@
 
   <body>
     <style type="text/css">
-      body { background-color: black; color: rgb(255,225,148); padding: 4em; font-family: Ubuntu Mono, DejaVu Sans Mono, Droid Sans Mono, Liberation Mono, Monospace; }
-      a { color: rgb(64,255,64); }
-      a:visited { color: rgb(32,192,32) }
+      body { background-color: black; color: rgb(255,216,128); padding: 4em; font-family: Ubuntu Mono, DejaVu Sans Mono, Droid Sans Mono, Liberation Mono, Monospace; }
+      a { color: rgb(255,216,128); text-decoration: underline; }
+      a:visited { color: rgb(192,160,96); }
       a:hover { color: white; }
-      p.hr { color: rgb(64,255,64) }
+      p.hr { color: rgb(128,255,128); }
       * { font-size: 12pt; }
     </style>
 
@@ -21,6 +21,15 @@
              U  ||----w |
                 ||     ||
 </pre>
+<p>tilde.farm is a shared linux system. our mission is to promote the experience
+of multi-user computing in an unstable and confusing environment. in pursuit of
+this goal, tilde.farm runs gentoo linux.</p>
+
+<p>currently tilde.farm offers secure shell, local irc, and web hosting services.
+registration of new accounts is currently <b>open</b>. if you would like to join,
+please email <a href="mailto:cmr@mdc2.org">cmr@mdc2.org</a> and be sure to include your preferred username and an
+ssh public key. there is no cost for membership.</p>
+
 <p>Host <%= @fqdn %>, running <%= @operatingsystem %> <%= @operatingsystemrelease %><br/>
 Uptime: <%= @uptime %><br/>
 </p>
