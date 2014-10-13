@@ -8,7 +8,7 @@ define tilde::user (
 
   user { $user:
     ensure     => present,
-    groups     => $tilde::site_group,
+    groups     => [$tilde::site_group, 'games'],
     managehome => true,
   }
 
