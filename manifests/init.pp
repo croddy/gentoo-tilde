@@ -37,10 +37,11 @@
 #
 class tilde (
   $irc_channel,
+  $local_packages,
   $site_name,
   $site_group,
   $users,
-  $users_defaults
+  $users_defaults,
 ) {
 
   include ::thttpd

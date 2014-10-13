@@ -6,12 +6,14 @@ define tilde::user (
   $userdir = "${thttpd::document_root}/~${user}"
   $irc_channel = $tilde::irc_channel
 
+  # account
   user { $user:
     ensure     => present,
     groups     => [$tilde::site_group, 'games'],
     managehome => true,
   }
 
+  # www content
   file { $userdir:
     ensure => directory,
     owner  => $user,
@@ -39,6 +41,7 @@ define tilde::user (
     order   => 1000,
   }
 
+  # ssh key
   file { "/home/${user}/.ssh":
     ensure => directory,
     owner  => $user,
@@ -54,6 +57,7 @@ define tilde::user (
     require => User[$user],
   }
 
+  # irssi config
   file { "/home/${user}/.irssi":
     ensure => directory,
     owner  => $user,
