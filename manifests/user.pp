@@ -4,6 +4,7 @@ define tilde::user (
 ) {
   $user = $title
   $userdir = "${thttpd::document_root}/~${user}"
+  $irc_channel = $tilde::irc_channel
 
   user { $user:
     ensure     => present,

@@ -36,6 +36,7 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class tilde (
+  $irc_channel,
   $site_name,
   $site_group,
   $users,
