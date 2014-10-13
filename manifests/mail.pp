@@ -12,6 +12,13 @@ class tilde::mail {
     notify  => Exec['postfix upgrade config'],
   }
 
+  file { '/var/spool/mail':
+    ensure => directory,
+    owner  => 'mail',
+    group  => 'root',
+    mode   => '1755',
+  }
+
   exec { 'postfix upgrade config':
     command     => 'postfix upgrade-configuration',
     refreshonly => true,
