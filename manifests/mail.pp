@@ -9,10 +9,11 @@ class tilde::mail {
     group   => 'root',
     mode    => '0644',
     content => template("${module_name}/main.cf.erb"),
-    notify  => Exec['postfix upgrade-configuration'],
+    notify  => Exec['postfix upgrade config'],
   }
 
-  exec { 'postfix upgrade-configration':
+  exec { 'postfix upgrade config':
+    command     => 'postfix upgrade-configuration',
     refreshonly => true,
     path        => '/usr/sbin',
     notify      => Service['postfix'],
