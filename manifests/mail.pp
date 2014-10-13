@@ -1,5 +1,5 @@
 class tilde::mail {
-  package { 'postfix':
+  package { ['postfix', 'alpine']:
     ensure => installed,
   }
 }
