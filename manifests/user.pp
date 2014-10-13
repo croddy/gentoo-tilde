@@ -66,6 +66,7 @@ define tilde::user (
     group   => $user,
     mode    => '0600',
     content => template("${module_name}/irssi_config.erb"),
+    replace => false,
   }
 
 }
