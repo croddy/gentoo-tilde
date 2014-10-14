@@ -35,7 +35,7 @@ ssh public key. there is no cost for membership.</p>
 
 <p class="hr">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 <p>Host <%= @fqdn %>, running <%= @operatingsystem %> <%= @operatingsystemrelease %><br/>
-Uptime: <%= @uptime %><br/>
-Total users: <%= scope['::tilde::users'].size %></p>
-<p class="active">Recently active: <%= @active_users %></p>
+Uptime: <%= @uptime %></p>
+<p class="active">Total users registered: <%= scope['::tilde::users'].size %><br/>
+<p>Recently active: <%= @active_users %></p>
 <ul>
