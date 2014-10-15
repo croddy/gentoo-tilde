@@ -91,4 +91,12 @@ class tilde (
     source => "puppet:///modules/${module_name}/tilde.png",
   }
 
+  # shell helper aliases
+  file { '/etc/profile.d/tilde-profile.sh':
+    ensure => file,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+    source => "puppet:///modules/${module_name}/tilde-profile.sh",
+  }
 }
