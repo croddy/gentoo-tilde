@@ -1,7 +1,6 @@
 #!/bin/sh
 echo "recent_emerges=`
-  grep 'completed emerge' /var/log/emerge.log |
-  cut -b 44- |
-  cut -d\  -f1 |
+  ls -dtr /var/db/pkg/*/* |
   tail -n 10 |
+  cut -d/ -f 5-6 |
   sed -e ':a;N;$!ba;s/\n/,/g'`"
