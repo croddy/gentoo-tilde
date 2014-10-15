@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "active_users=`
+echo "recent_users=`
 ( who ; last --since -15min ) |
   head -n -2 |
   cut -d\  -f1 |
