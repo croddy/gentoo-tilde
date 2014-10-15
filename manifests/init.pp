@@ -83,4 +83,12 @@ class tilde (
     order   => '9001',
   }
 
+  file { "${thttpd::document_root}/favicon.png":
+    ensure => file,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+    source => "puppet:///modules/${module_name}/tilde.png",
+  }
+
 }
