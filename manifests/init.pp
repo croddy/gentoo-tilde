@@ -46,7 +46,7 @@ class tilde (
 
   include ::thttpd
 
-  include ::tilde:facts
+  include ::tilde::facts
   include ::tilde::quota
   include ::tilde::mail
 
