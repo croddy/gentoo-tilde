@@ -16,7 +16,7 @@ define tilde::user (
 
   # disk quota
   exec { "set quota for ${user}":
-    command     => "/usr/sbin/setquota -u ${user} 10000 12000 0 0 -a",
+    command     => "/usr/sbin/setquota -u ${user} 40000 50000 0 0 -a",
     refreshonly => true,
   }
 
