@@ -37,7 +37,7 @@ class tilde::mail {
     enable => true,
   }
 
-  $users = join(keys(hiera('tilde::users'), ', ')
+  $users = join(keys(hiera('tilde::users')), ', ')
 
   file_line { 'all@ alias':
     path   => '/etc/aliases',
