@@ -1,0 +1,17 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                                *** NOTICE ***
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Your public_html directory should be a symlink to a directory named
+/var/www/tilde.farm/~[your username].
+
+If you remove public_html and replace it with a directory, it will STOP WORKING!
+If you just remove the symlink, Puppet will re-create it the next time it runs.
+
+thttpd is very picky and paranoid about file permissions. Files must be world-
+readable (e.g. 'chmod o+r public_html/*') and must not be executable (e.g.
+'chmod a-x public_html/*') or thttpd will refuse to serve them.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
