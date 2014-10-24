@@ -25,7 +25,7 @@ class tilde::mail {
     notify      => Exec['upgrade postfix config'],
   }
 
-  exec { 'postfix upgrade config':
+  exec { 'upgrade postfix config':
     command     => 'postfix upgrade-configuration',
     refreshonly => true,
     path        => '/usr/sbin',
