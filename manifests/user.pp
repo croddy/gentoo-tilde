@@ -33,6 +33,14 @@ define tilde::user (
     target => $userdir,
   }
 
+  file { "${userdir}/README":
+    ensure => file,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0600',
+    source => "puppet:///modules/${module_name}/README",
+  }
+
   file { "${userdir}/index.html":
     ensure  => file,
     owner   => $user,
