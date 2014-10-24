@@ -9,7 +9,7 @@ class tilde::mail {
     group   => 'root',
     mode    => '0644',
     content => template("${module_name}/main.cf.erb"),
-    notify  => Exec['postfix upgrade config'],
+    notify  => Exec['newaliases'],
   }
 
   file { '/var/spool/mail':
@@ -17,6 +17,12 @@ class tilde::mail {
     owner  => 'mail',
     group  => 'root',
     mode   => '1777',
+  }
+  exec { 'newaliases':
+    command     => 'newaliases',
+    refreshonly => true,
+    path        => '/usr/bin',
+    notify      => Exec['upgrade postfix config'],
   }
 
   exec { 'postfix upgrade config':
@@ -29,5 +35,14 @@ class tilde::mail {
   service { 'postfix':
     ensure => running,
     enable => true,
+  }
+
+  $users = join(keys(tilde::users), ', ')
+
+  file_line { 'all@ alias':
+    path   => '/etc/aliases',
+    line   => "all: ${users}",
+    match  => '^all: ',
+    notify => Exec['newaliases'],
   }
 }
