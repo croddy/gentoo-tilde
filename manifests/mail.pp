@@ -40,7 +40,7 @@ class tilde::mail {
   $users = join(keys(hiera('tilde::users')), ', ')
 
   file_line { 'all@ alias':
-    path   => '/etc/aliases',
+    path   => '/etc/mail/aliases',
     line   => "all: ${users}",
     match  => '^all: ',
     notify => Exec['newaliases'],
